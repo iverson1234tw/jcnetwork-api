@@ -11,6 +11,7 @@ def try_jcnetwork_api():
             })
     elif request.method == 'POST':
         text_message = json.loads(request.get_data()).get('text')
+        print(text_message)
         return json.dumps({
             'code': 200,
             'message': 'Hello {name}, welcome to JCNetworkKit'.format(name=text_message)
