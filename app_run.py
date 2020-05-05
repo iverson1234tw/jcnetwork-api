@@ -13,6 +13,7 @@ def try_jcnetwork_api():
             'message': 'Success to call the get method!'
             })
     elif request.method == 'POST':
+        print(request.values.get('text'))
         print(request.get_data(as_text=True))
         print(json.loads(request.get_data(as_text=True)))
         text_message = json.loads(request.get_data(as_text=True)).get('text')
