@@ -2,7 +2,7 @@
 # coding: utf8
 
 from flask_cors import CORS
-from flask import Flask
+from flask import Flask, json
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False

@@ -1,3 +1,6 @@
+# -*- coding: utf8 -*-
+# coding: utf8
+
 from werkzeug.exceptions import HTTPException
 from flask import request, send_file, json
 from __init__ import *
