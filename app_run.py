@@ -16,6 +16,7 @@ def try_jcnetwork_api():
         # print(request.get_data(as_text=True))
         print(json.loads(request.get_data(as_text=True)))
         text_message = json.loads(request.get_data(as_text=True)).get('text')
+        print(text_message)
         return json.dumps({
             'code': 200,
             'message': 'Hello, welcome to JCNetworkKit'
