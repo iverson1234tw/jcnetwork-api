@@ -10,11 +10,11 @@ def try_jcnetwork_api():
             'message': 'Success to call the get method!'
             })
     elif request.method == 'POST':
-        text_message = json.loads(request.get_data())
-        print(text_message)
+        print(json.loads(request.get_data()).get('text'))
+        # text_message = json.loads(request.get_data())
         return json.dumps({
             'code': 200,
-            'message': 'Hello {name}, welcome to JCNetworkKit'.format(name=text_message)
+            'message': 'Hello, welcome to JCNetworkKit'
             })
     elif request.method == 'DELETE':
         return json.dumps({
