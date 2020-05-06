@@ -14,12 +14,12 @@ def try_jcnetwork_api():
         }
         return Response(json.dumps(jc_res), mimetype='application/json')
     elif request.method == 'POST':
-        print(json.loads(request.get_data()).get('text'))
         name = json.loads(request.get_data()).get('text')
-        return json.dumps({
+        jc_res = {
             'code': 200,
             'message': 'Hello {name}, welcome to JCNetworkKit'.format(name=name)
-            })
+        }
+        return Response(json.dumps(jc_res), mimetype='application/json')
 
 if __name__ == '__main__':  
     app.run(
