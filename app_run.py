@@ -7,6 +7,7 @@ from __init__ import *
 
 @app.route('/try-jcnetwork-api', methods=['GET', 'POST', 'DELETE'])
 def try_jcnetwork_api():
+    request.mimetype = 'application/json'
     if request.method == 'GET':
         return json.dumps({
             'code': 200,
@@ -18,11 +19,6 @@ def try_jcnetwork_api():
         return json.dumps({
             'code': 200,
             'message': 'Hello {name}, welcome to JCNetworkKit'.format(name=name)
-            })
-    elif request.method == 'DELETE':
-        return json.dumps({
-            'code': 200,
-            'message': 'Success to call the delete method!'
             })
 
 if __name__ == '__main__':  
