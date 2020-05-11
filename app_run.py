@@ -20,6 +20,13 @@ def try_jcnetwork_api():
             'message': 'Hello {name}, welcome to JCNetworkKit'.format(name=name)
         }
         return Response(json.dumps(jc_res), mimetype='application/json')
+    elif request.method == 'DELETE':
+        thing = json.loads(request.get_data()).get('object')
+        jc_res = {
+            'code': 200,
+            'message': 'Deleted {obj} successfully!'.format(obj=thing)
+        }
+        return Response(json.dumps(jc_res), mimetype='application/json')
 
 if __name__ == '__main__':  
     app.run(
